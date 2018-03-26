@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function(){
+            function changeSources(selector){
+                var frontSource = $(selector).attr("src");
+                var backSource = $(selector).attr("other");
+                $(selector).attr("other", frontSource);
+                $(selector).attr("src", backSource);
+            }
+
+            $("img").hover(function(){
+                changeSources($(this));
+                }, function(){
+                changeSources($(this));
+             });
+        }) 
+    </script>
+
+
+    <style>
+        img{
+            width: 80px;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <img src="down1.png" other="top2.png">
+    <img src="top2.png" other="down1.png">
+    <img src="left1.png" other="right1.png">
+    <img src="right1.png" other="left1.png">
+
+</body>
+</html>
